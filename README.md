@@ -51,6 +51,7 @@ Currently, there is no evidence on herd-immunity of Covid-19. However, the gover
 ## Other ideas
 
 ### Space optimisation
+Some workplaces may be able to rearrange their seating to optimise occupancy. How can we model space optimisation with the social distancing constraints? I'd do a 2-stage optimisation model in which the 1st stage is to model the space optimisation and that remains fixed for the 2nd stage that models the daily/hourly staff scheduling. There may be a better way of doing this.
 
 ### Use of office facilities
 I am interested in an online web-based solution that provides the staff with an allocated time for using facilities. For example, when a staff member needs to use the kitchen (or rest-room) they go and log in their request, the online system allocates the facility which is least busy or a time window when they can use the facility. Similarly, when they need to enter or exit the building, a route of minimal traffic. Such a solution needs a live feed of sensor-data - very doable but needs time and effort.
