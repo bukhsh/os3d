@@ -1,2 +1,56 @@
-# os3d
-Optimal staff scheduling with social distancing constraints 
+# Optimal staff scheduling with social distancing constraints (os3d)
+
+
+
+## Introduction
+
+It is likely that for most of us the return to work will be gradual with a degree of social distancing in effect. I have been looking at how mathematical modelling can help us plan, design and operate better workplaces while adhering to the social distancing guidelines from the government.
+
+
+## Mathematical model
+
+This is a scheduling algorithm with a set of social distancing constraints. The resulting model is a mixed-integer linear programming (MILP) problem.
+
+
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=u_{s,k,d}=\left\{\begin{matrix}&space;1&space;&&space;\text{if&space;staff&space;`s'&space;occupies&space;desk&space;`k'&space;on&space;day&space;`d'}&space;&&space;\\&space;0&\text{otherwise}&space;&&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?u_{s,k,d}=\left\{\begin{matrix}&space;1&space;&&space;\text{if&space;staff&space;`s'&space;occupies&space;desk&space;`k'&space;on&space;day&space;`d'}&space;&&space;\\&space;0&\text{otherwise}&space;&&space;\end{matrix}\right." title="u_{s,k,d}=\left\{\begin{matrix} 1 & \text{if staff `s' occupies desk `k' on day `d'} & \\ 0&\text{otherwise} & \end{matrix}\right." /></a>
+
+
+
+I am not going to go into too much mathematical detail here but please get in touch if you have any questions. The mathematical model is implemented in the algebraic modelling language PYOMO - so it is easy to decode the individual constraints. Please refer to my lecture [(here)](https://drive.google.com/file/d/0Bzq9B9vW0gM0dFdDbWQyVk5KekU/view?usp=sharing) for mathematical formulation of some standard scheduling algorithms.
+
+## Inputs and Outputs
+The input to the model is via Excel spreadsheet. See 'cases' folder for an example of the data. The user is expected to input the coordinates of the seating arrangement. The model will calculate the distances between the staff members. The social distancing constraint will ensure that the desks which are less than a given social distancing parameters are not occupied at the same time.
+
+The optimal schedule is written on a spreadsheet 'results.xlsx'.
+
+
+## How this model can be used?
+This model can be used for planning the staff members that can safely be accommodated in a building on a given day. The look-ahead (weekly/monthly) feature of this model enables the decision-makers to make an informed judgement about scheduling overtime.
+
+There are two important parameters in this model that can be tuned to quantify the impact of different policies. These parameters are the social distancing (&rho;) and hot-desking (Flex).
+
+
+&rho; (meters): social distancing parameter
+
+Flex<sub>s,l</sub> (0 or 1): Flex is a parameter that assigns a staff member to a particular desk. If all flex parameters are equal to 1, that models the hot-desking and the model decides where a staff member would sit on a particular day.
+
+
+## Extensions
+
+### Flexible working hours
+The scheduling time-horizon of the model here is over days. However, it is possible to scheduling staff over hourly time-periods with a fix working-hours window. This will model the situation where working hours could be staggered to optimise the number of staff at any given time.
+
+
+### Herd immunity constraints
+
+Currently, there is no evidence on herd-immunity of Covid-19. However, the government is planning to introduce immunity certificates. In the current version of the model, the social distancing constraint applies to all staff members. However, it is possible to partition the set of staff into two subsets: immune and not-immune.
+
+
+
+## Other ideas
+
+### Space optimisation
+
+### Use of office facilities
+I am interested in an online web-based solution that provides the staff with an allocated time for using facilities. For example, when a staff member needs to use the kitchen (or rest-room) they go and log in their request, the online system allocates the facility which is least busy or a time window when they can use the facility. Similarly, when they need to enter or exit the building, a route of minimal traffic. Such a solution needs a live feed of sensor-data - very doable but needs time and effort.
