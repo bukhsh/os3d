@@ -21,7 +21,7 @@ The model can be used to answer the following questions (also see the section on
 
 * Can 'hot desking' increase occupancy? The answer to this questions is yes. But only if the staff is willing to stagger their working hours or willing to work particular days (e.g. 2 days a week). If the staff is not flexible, then hot desking does not help with occupancy. With hot desking cleaning regime would need to be improved.
 
-## Mathematical model
+## Optimisation model
 
 This is a scheduling algorithm with a set of social distancing constraints. The resulting model is a mixed-integer linear programming (MILP) problem.
 
@@ -31,7 +31,7 @@ This is a scheduling algorithm with a set of social distancing constraints. The 
 
 
 
-I am not going to go into too much mathematical detail here but please get in touch if you have any questions. The mathematical model is implemented in the algebraic modelling language PYOMO - so it is easy to decode the individual constraints. Please refer to my lecture [(here)](https://drive.google.com/file/d/0Bzq9B9vW0gM0M1JkNnhYSHA2Rnc/view?usp=sharing) for mathematical formulation of some standard scheduling algorithms.
+I am not going to go into too much mathematical detail but please feel free to get in touch if you have any questions. The mathematical model is implemented in an algebraic modelling language called PYOMO. Please refer to my lecture [(here)](https://drive.google.com/file/d/0Bzq9B9vW0gM0M1JkNnhYSHA2Rnc/view?usp=sharing) for mathematical formulations of some standard scheduling problems.
 
 ## Inputs and Outputs
 The input to the model is via Excel spreadsheet. See 'cases' folder for an example of the data. The user is expected to input the coordinates of the seating arrangement. The model will calculate the distances between the staff members. The social distancing constraint will ensure that the desks which are less than a given social distancing parameters are not occupied at the same time.
