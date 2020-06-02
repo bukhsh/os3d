@@ -6,6 +6,20 @@
 
 It is likely that for most of us the return to work will be gradual with a degree of social distancing in effect. I have been looking at how mathematical modelling can help us plan, design and operate better workplaces while adhering to the social distancing guidelines from the government.
 
+I have build an optimisation model that maximises the occupancy of a building subject to . (x,y) coordinates of a seating plan are required. The model calculates the distances between the staff and provides an optimal schedule for a given time horizon (e.g a day, a week or a month). I have tested this model in the office space where I am based [(TIC Levl 4)](figures/TIC_L4.png). With 2 m social distancing, the optimal occupancy is 34% and [here](figures/TIC_L4_Solution_w2m.png) is what a solution looks like. See a graph [here](figures/OptimalOccupancy.png) for a relationship between occupancy and social distancing parameter.
+
+The model can be used to answer the following questions (also see the section on extensions below):
+
+* Scheduling staff for a given number of days (i.e. weekly/monthly)
+
+* Scheduling staff with flexible working hours
+
+* Identifying the problem areas in the seating plan
+
+* Dependence of the social distancing parameter on occupancy level
+
+
+* Can 'hot desking' increase occupancy? The answer to this questions is yes. But only if the staff is willing to stagger their working hours or willing to work particular days (e.g. 2 days a week). If the staff is not flexible, then hot desking does not help with occupancy. With hot desking cleaning regime would need to be improved.
 
 ## Mathematical model
 
