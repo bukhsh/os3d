@@ -6,9 +6,11 @@
 
 It is likely that for most of us the return to work will be gradual with a degree of social distancing in effect. I have been looking at how mathematical modelling can help us plan, design and operate better workplaces while adhering to the social distancing guidelines from the government.
 
-I have build an optimisation model that maximises the occupancy of a building subject to . (x,y) coordinates of a seating plan are required. The model calculates the distances between the staff and provides an optimal schedule for a given time horizon (e.g a day, a week or a month). I have tested this model in the office space where I am based [(TIC Levl 4)](figures/TIC_L4.png). With 2 m social distancing, the optimal occupancy is 34% and [here](figures/TIC_L4_Solution_w2m.png) is what a solution looks like. See a graph [here](figures/OptimalOccupancy.png) for a relationship between occupancy and social distancing parameter.
+I have build an optimisation model that maximises the occupancy of a building subject to a social distancing constraint. (x,y) coordinates of a seating plan are required as an input to the model. The model calculates the distances between the staff and provides an optimal schedule for a given time horizon (e.g a day, a week or a month). I have tested this model in an office space where I am based [(TIC Levl 4)](figures/TIC_L4.png). With 2 m social distancing, the optimal occupancy is approximately 34% and [here](figures/TIC_L4_Solution_w2m.png) is what a solution looks like. See a graph [here](figures/OptimalOccupancy.png) for a relationship between occupancy and social distancing parameter.
 
-The model can be used to answer the following questions (also see the section on extensions below):
+I have provided a high-level view of the optimisation in a section below. Please refer to my lecture [(here)](https://drive.google.com/file/d/0Bzq9B9vW0gM0M1JkNnhYSHA2Rnc/view?usp=sharing) for mathematical details of some standard scheduling problems. I found that implementing a social distancing constraint is a real pain in a sceduling algorithm. I'm glad it worked out well in the end. Please get in touch if you have any ideas regarding the use of this model or if you'd like to collaborate on extending this model for a specific application (see the sections on 'extensions' and 'other ideas' below)
+
+The model can be used to answer the following questions:
 
 * Scheduling staff for a given number of days (i.e. weekly/monthly)
 
@@ -31,7 +33,7 @@ This is a scheduling algorithm with a set of social distancing constraints. The 
 
 
 
-I am not going to go into too much mathematical detail but please feel free to get in touch if you have any questions. The mathematical model is implemented in an algebraic modelling language called PYOMO. Please refer to my lecture [(here)](https://drive.google.com/file/d/0Bzq9B9vW0gM0M1JkNnhYSHA2Rnc/view?usp=sharing) for mathematical formulations of some standard scheduling problems.
+I am not going to go into too much mathematical detail but please feel free to get in touch if you have any questions. The mathematical model is implemented in an algebraic modelling language called PYOMO. 
 
 ## Inputs and Outputs
 The input to the model is via Excel spreadsheet. See 'cases' folder for an example of the data. The user is expected to input the coordinates of the seating arrangement. The model will calculate the distances between the staff members. The social distancing constraint will ensure that the desks which are less than a given social distancing parameters are not occupied at the same time.
