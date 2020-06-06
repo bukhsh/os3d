@@ -23,6 +23,13 @@ The model can be used to answer the following questions:
 
 * Can 'hot desking' increase occupancy? The answer to this questions is yes. But only if the staff is willing to stagger their working hours or willing to work particular days (e.g. 2 days a week). If the staff is not flexible, then hot desking does not help with occupancy. With hot desking cleaning regime would need to be improved.
 
+## Dependencies
+This model has following two dependencies:
+
+* Python based modelling language - PYOMO
+* A mixed integer programming solver (e.g. CPLEX, gurobi)
+
+
 ## Optimisation model
 
 This is a scheduling algorithm with a set of social distancing constraints. The resulting model is a mixed-integer linear programming (MILP) problem.
